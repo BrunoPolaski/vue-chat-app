@@ -13,7 +13,12 @@
       </q-toolbar>
     </q-header>
 
-    <q-drawer bordered v-model="leftDrawerOpen" show-if-above>
+    <q-drawer
+      class="column justify-between"
+      bordered
+      v-model="leftDrawerOpen"
+      show-if-above
+    >
       <q-list>
         <q-item v-for="link in links" :key="link.to" clickable :to="link.to">
           <q-item-section>
@@ -26,7 +31,8 @@
           </q-item-section>
         </q-item>
       </q-list>
-      <div class="row full-width flex-center">
+      <div class="row q-pa-md full-width justify-between">
+        <q-btn rounded icon="person" @click="changeTheme" />
         <q-btn
           rounded
           :icon="$q.dark.isActive ? 'light_mode' : 'dark_mode'"
